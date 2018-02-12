@@ -14,9 +14,9 @@ class HttpError extends Error {
    * @param {any} args
    * @memberof HttpError
    */
-  constructor(status, ...args) {
+  constructor(...args) {
     super(...args);
-    this.status = status;
+    this.isAuthMiddleware = true;
 
     Error.captureStackTrace(this, HttpError);
   }
